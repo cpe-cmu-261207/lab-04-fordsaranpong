@@ -1,8 +1,8 @@
 /* Your code here */
-var input = document.querySelector("#input");
+const input = document.querySelector("#input");
+const list = document.querySelector("#list")
+document.querySelector("#Add").addEventListener("click", addtext);
 var task = [[], []]
-var list = document.querySelector("#list")
-document.querySelector("#Add").addEventListener("click", addtask);
 if (localStorage.task == null)
   localStorage.setItem('task', JSON.stringify(task));
 task = JSON.parse(localStorage.getItem('task'));
@@ -13,15 +13,7 @@ input.addEventListener("keyup", function (event) {
     document.querySelector("#Add").click();
   }
 });
-function addtask() {
-  if (input.value == "") {
-    alert("Task cannot be empty")
-  } else {
-    const commingtask = input.value
-    task[0].push(commingtask)
-    show()
-  }
-}
+
 function donetask(index) {
   return function curried_func(x) {
     task[1].push(task[0][index])
@@ -32,6 +24,16 @@ function donetask(index) {
 function deletetask(index) {
   return function curried_func(x) {
     task[0].splice(index, 1);
+    show()
+  }
+}
+
+function addtext() {
+  if (input.value == "") {
+    alert("Task cannot be empty")
+  } else {
+    const commingtask = input.value
+    task[0].push(commingtask)
     show()
   }
 }
@@ -92,3 +94,5 @@ function show() {
     list.append(div)
   }
 }
+
+
