@@ -8,7 +8,7 @@ if (localStorage.task == null)
 task = JSON.parse(localStorage.getItem('task'));
 show()
 input.addEventListener("keyup", function (event) {
-  if (event.keyCode === 13) {
+  if (event.key === 13) {
     event.preventDefault();
     document.querySelector("#Add").click();
   }
@@ -59,17 +59,6 @@ function show() {
     newtask.classList.add("text-4xl")
     div.classList.add("border-b-4")
     div.classList.add("border-green-400")
-
-    done.style.visibility = 'hidden'
-    del.style.visibility = 'hidden'
-    div.addEventListener("mouseover", function () {
-      done.style.visibility = 'visible'
-      del.style.visibility = 'visible'
-    })
-    div.addEventListener("mouseout", function () {
-      done.style.visibility = 'hidden'
-      del.style.visibility = 'hidden'
-    })
     done.addEventListener("click", donetask(index))
     del.addEventListener("click", deletetask(index))
     taskdiv.append(newtask)

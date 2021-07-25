@@ -11,7 +11,7 @@ input[type=text] {
 }
 
 .done{
-    background-color: #4CAF50; 
+    background-color: #2be731; 
     border: none;
     color: rgb(0, 0, 0);
     padding: 15px 32px;
@@ -21,7 +21,7 @@ input[type=text] {
     font-size: 22px;    
 }
 .del{
-    background-color: #e72517; 
+    background-color: #e9180a; 
     border: none;
     color: rgb(0, 0, 0);
     padding: 15px 32px;
